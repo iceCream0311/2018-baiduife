@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+<style type="text/css">
+ div{ margin-top: 100px;text-align: center}
+ div p{margin-bottom: 50px;}
+ span{padding: 0 15px;display:inline-block;*display:inline;line-height: 32px;height:32px;font-size: 14px;position: relative;}
+ /*通过控制宽度和定位来世见从中间到两边的一个长度变化*/
+ span:after{content: "";width: 0;border-bottom: 3px solid #4669e1;transition: all 0.5s; position: absolute;bottom:0;left: 50%}
+ span.active{color:#4669e1 }
+ span.active::after{width: 100%;left: 0;}
+</style>
+<body>
+    <div>
+        <p><span id="lidom">前端学院</span></p>
+        <button id="btn">切换样式</button>
+    </div>
+
+    <script type="text/javascript">
+     var liDom=document.getElementById("lidom");
+     /*点击切换 active类名*/
+     document.getElementById("btn").onclick=function(){
+       if (!(liDom.getAttribute("class"))) {
+        liDom.setAttribute("class","active")
+       }else{
+        liDom.setAttribute("class","")
+       }
+     }
+
+    </script>
+</body>
+
+</html>
