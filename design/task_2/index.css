@@ -16,10 +16,10 @@
     margin-right: 25px;
 }
 .box .box1{
-    -webkit-transform: rotate(-30deg);
-    -ms-transform: rotate(-30deg);
-    -o-transform: rotate(-30deg);
-    transform: rotate(-30deg);
+    -webkit-transform: skewX(30deg);
+    -ms-transform: skewX(30deg);
+    -o-transform: skewX(30deg);
+    transform: skewX(30deg);
 }
 .box .box2{
     -webkit-transform: scale(0.5,1);
@@ -43,9 +43,9 @@
          transform:translate(10px,20px) ;
  }
  .box .box5{
-    -webkit-transform: scale(0.5,1) rotate(45deg) translate(10px,20px);
-       -moz-transform: scale(0.5,1) rotate(45deg) translate(10px,20px);
-        -ms-transform: scale(0.5,1) rotate(45deg) translate(10px,20px);
-         -o-transform: scale(0.5,1) rotate(45deg) translate(10px,20px);
-            transform: scale(0.5,1) rotate(45deg) translate(10px,20px);
+    -webkit-transform: skewX(30deg) scale(0.5,1) rotate(45deg) translate(10px,20px);
+       -moz-transform: skewX(30deg) scale(0.5,1) rotate(45deg) translate(10px,20px);
+        -ms-transform: skewX(30deg) scale(0.5,1) rotate(45deg) translate(10px,20px);
+         -o-transform: skewX(30deg) scale(0.5,1) rotate(45deg) translate(10px,20px);
+            transform: skewX(30deg) scale(0.5,1) rotate(45deg) translate(10px,20px);
  }
