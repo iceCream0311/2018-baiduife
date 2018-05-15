@@ -9,7 +9,8 @@
  div p{margin-bottom: 50px;}
  span{padding: 0 15px;display:inline-block;*display:inline;line-height: 32px;height:32px;font-size: 14px;position: relative;}
  /*通过控制宽度和定位来世见从中间到两边的一个长度变化*/
- span:after{content: "";width: 0;border-bottom: 3px solid #4669e1;transition: all 0.5s; position: absolute;bottom:0;left: 50%}
+ span:after{content: "";width: 0;border-bottom: 3px solid #4669e1;transition: all 0.5s;
+ behavior: url(../lib/ie-css3.htc); position: absolute;bottom:0;left: 50%;}
  span.active{color:#4669e1 }
  span.active::after{width: 100%;left: 0;}
 </style>
