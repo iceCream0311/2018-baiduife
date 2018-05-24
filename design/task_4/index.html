@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <style type="text/css">
-         .box{
-             width: 250px;
-             height: 350px;
-             margin: 100px auto;
 
-         }
-         img{
-          position: absolute;
-          -webkit-transition: all 1s ease-in-out;
-                -moz-transition: all 1s ease-in-out;
-                 -ms-transition: all 1s ease-in-out;
-                  -o-transition: all 1s ease-in-out;
-                     transition: all 1s ease-in-out;
-         }
-         img:nth-child(2){
-           z-index: 1;
-           transform: rotateY(180deg);
-         }
-         img:nth-child(1){
-          z-index: 2;
-           transform: rotateY(360deg);
-         }
-         .box:hover img:nth-child(1){
-          z-index: 1;
-           transform: rotateY(180deg);
-         }
-          .box:hover  img:nth-child(2){
-           z-index: 2;
-           transform: rotateY(360deg);
-         }
-        </style>
-    </head>
-    <body>
-     <div class="box">
-          <img src="images/heads.jpg">
-          <img src="images/tails.jpg">
-     </div>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0
+    }
+    
+    .wrapper {
+        width: 250px;
+        height: 350px;
+        margin: 40px auto;
+        /*  定义 3D 元素距视图的距离*/
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        /*子元素将保留其 3D 位置。*/
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d
+    }
+    
+    .wrapper .box {
+        position: relative;
+    }
+    
+    .wrapper .box,
+    .box:before,
+    .box:after {
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .box:before,
+    .box:after {
+        position: absolute;
+    }
+    
+    .box:after,
+    .box:before {
+        content: "";
+        display: block;
+        /* //隐藏被旋转的 div 元素的背面： */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: -webkit-transform .5s;
+        transition: -webkit-transform .5s;
+        -o-transition: transform .5s;
+        transition: transform .5s;
+        transition: transform .5s, -webkit-transform .5s
+    }
+    
+    .box:before {
+        background: url(./images/heads.jpg) no-repeat;
+        background-size: 100% 100%;
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg)
+    }
+    
+    .box:after {
+        background: url(./images/tails.jpg) no-repeat;
+        background-size: 100% 100%;
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0)
+    }
+    
+    .wrapper:hover .box:before {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0)
+    }
+    
+    .wrapper:hover .box:after {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg)
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+        </div>
+    </div>
+</body>
+
 </html>
