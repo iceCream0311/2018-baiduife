@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+         .box{
+             width: 250px;
+             height: 350px;
+             margin: 100px auto;
+
+         }
+         img{
+          position: absolute;
+          -webkit-transition: all 1s ease-in-out;
+                -moz-transition: all 1s ease-in-out;
+                 -ms-transition: all 1s ease-in-out;
+                  -o-transition: all 1s ease-in-out;
+                     transition: all 1s ease-in-out;
+         }
+         img:nth-child(2){
+           z-index: 1;
+           transform: rotateY(180deg);
+         }
+         img:nth-child(1){
+          z-index: 2;
+           transform: rotateY(360deg);
+         }
+         .box:hover img:nth-child(1){
+          z-index: 1;
+           transform: rotateY(180deg);
+         }
+          .box:hover  img:nth-child(2){
+           z-index: 2;
+           transform: rotateY(360deg);
+         }
+        </style>
+    </head>
+    <body>
+     <div class="box">
+          <img src="images/heads.jpg">
+          <img src="images/tails.jpg">
+     </div>
+    </body>
+</html>
