@@ -6,45 +6,29 @@
     </head>
     <body>
      <div class="img-box">
+      <!-- 通过input选择控制当前项 -->
+      <input type="radio" checked="ckecked" name="imgCtrl" id="img1">
+      <input type="radio" name="imgCtrl" id="img2">
+      <input type="radio" name="imgCtrl" id="img3">
+      <input type="radio" name="imgCtrl" id="img4">
+      <input type="radio" name="imgCtrl" id="img5">
+      <!-- 图片盒子 -->
      <ul>
       <li><img src="images/1.jpg"></li>
-      <li class="active"><img src="images/2.jpg"></li>
+      <li><img src="images/2.jpg"></li>
       <li><img src="images/3.jpg"></li>
       <li><img src="images/4.jpg"></li>
       <li><img src="images/5.jpg"></li>
      </ul>
-     <ol>
-      <li><img src="images/1.jpg"></li>
-      <li class="active" ><img src="images/2.jpg"></li>
-      <li><img src="images/3.jpg"></li>
-      <li><img src="images/4.jpg"></li>
-      <li><img src="images/5.jpg"></li>
-     </ol>
+      <!-- 控制按钮 -->
+     <div class="slider-ctrl">
+        <label for="img1"><img src="images/1.jpg"></label>
+        <label for="img2"><img src="images/2.jpg"></label>
+        <label for="img3"><img src="images/3.jpg"></label>
+        <label for="img4"><img src="images/4.jpg"></label>
+        <label for="img5"><img src="images/5.jpg"></label>
+     </div>
+
      </div>
     </body>
-    <script type="text/javascript">
-    var olLis=document.querySelectorAll("ol li")
-    var ulLis=document.querySelectorAll("ul li")
-    var zi=2,findex=0;
-      for (var i = 0; i < olLis.length; i++) {
-        olLis[i].index=i
-        olLis[i].onclick=function(){
-          for (var j = 0; j < olLis.length; j++) {
-            olLis[j].setAttribute("class","");
-            if (findex!=j) {
-              ulLis[j].setAttribute("class","");
-            }else{
-               ulLis[findex].setAttribute("css",{"z-index": zi});
-            }
-          }
-        this.setAttribute("class","active");
-        ulLis[this.index].setAttribute("class","active");
-        var $this=this;
-        setTimeout(function(){
-        ulLis[findex].setAttribute("class","");
-         findex=$this.index;
-        },1000)
-        }
-      }
-    </script>
 </html>
