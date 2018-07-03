@@ -11,5 +11,6 @@
 3. [CSS transition 和 CSS transform 配合制作动画](./design/task_3/index.html)
 4. [空间的卡片翻转动效](./design/task_4/index.html)
 5. [纯 CSS 制作绕中轴旋转的立方体](./design/task_5/index.html)
+6. [利用 CSS animation 制作一个炫酷的 Slider](./design/task_6/index.html)
 
 
