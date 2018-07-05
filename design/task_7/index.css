@@ -118,10 +118,10 @@ p {
     background-color: #0d8aee;
 }
 input:focus ~ label>span{animation:animationspan 0.5s  ease-in;animation-fill-mode: forwards;}
-input:focus ~ label{animation:animationlabel 0.5s  ease-in;animation-fill-mode: forwards;}
-label.active{animation:animationlabel2 0.5s  ease-out;animation-fill-mode: forwards;}
+label:after{content: "";height: 0;width: 0;transition: width .5s ease;border-bottom:2px solid #3b86cd;position: absolute;bottom:0px;left: 0}
+input:focus~label:after{width: 100%}
 label.active span{font-size: 1.2rem}
-.btn:focus{animation:animationbtn 0.75s ;    animation-fill-mode: both;}
+.btn:focus{animation:animationbtn 0.75s ;animation-fill-mode: both;}
 @keyframes animationspan{
     0%{
         font-size: 1.6rem
@@ -130,31 +130,9 @@ label.active span{font-size: 1.2rem}
         font-size: 1.2rem
     }
 }
-@keyframes animationlabel{
-    0%{
-        width: 0;
-        border:none
-    }
-    100%{
-        width: 100%;
-        border-bottom:2px solid #3b86cd
-    }
-}
-@keyframes animationlabel2{
-    0%{
-        width: 100%;
-        border-bottom:2px solid #3b86cd
-    }
-    100%{
-        width: 0;
-        border:none
-    }
 
-}
+
 @keyframes animationbtn{
-//     0%, 20%, 40%, 60%, 80%, 100% {
-//     animation-timing-function: cubic-bezier(.215,.61,.355,1);
-// }
 0% {
     transform: scale3d(.3,.3,.3);
 }
