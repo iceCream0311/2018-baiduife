@@ -1,0 +1,177 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    font-size: 1.8em;
+    line-height: 3;
+    background-color: #eeeeee;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    font-weight: 800;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.site-container {
+    max-width: 320px;
+    margin: 10px auto;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+@media screen and (min-width: 60.063em) {
+    .site-container {
+        max-width: 400px;
+    }
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.24), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    padding: 1em 1.5em;
+}
+
+.form__wrapper {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    vertical-align: top;
+}
+
+.form__wrapper__submit {
+    padding: 1.6rem 0;
+}
+
+.form__input {
+    display: block;
+    position: relative;
+    margin-top: 1em;
+    padding: 0.84em 0;
+    width: 100%;
+    box-sizing: border-box;
+    color: #444;
+    font-size: 1.6rem;
+    outline: 0;
+    border: none;
+    border-bottom: solid 1px #ddd;
+}
+
+.form__input:focus {
+    background-position: 0 0;
+    color: #444;
+}
+
+.form__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    height: calc(99%);
+    text-align: left;
+    pointer-events: none;
+    color: #999;
+}
+
+.form__label__content {
+    position: absolute;
+}
+
+.form__input:focus ~ .form__label .form__label-content,
+.form--filled .form__label-content {}
+
+.btn {
+    width: 100%;
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    border-radius: 2px;
+    background-color: #2196f3;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 1.6rem;
+    box-shadow: 0 1px 3px 0 rgba(3, 30, 51, 0.24), 0 1px 2px 0 rgba(3, 30, 51, 0.12);
+    transition: all 0.2s ease;
+}
+
+.btn:focus,
+.btn:hover {
+    background-color: #0d8aee;
+}
+input:focus ~ label>span{animation:animationspan 0.5s  ease-in;animation-fill-mode: forwards;}
+input:focus ~ label{animation:animationlabel 0.5s  ease-in;animation-fill-mode: forwards;}
+label.active{animation:animationlabel2 0.5s  ease-out;animation-fill-mode: forwards;}
+label.active span{font-size: 1.2rem}
+.btn:focus{animation:animationbtn 0.75s ;    animation-fill-mode: both;}
+@keyframes animationspan{
+    0%{
+        font-size: 1.6rem
+    }
+    100%{
+        font-size: 1.2rem
+    }
+}
+@keyframes animationlabel{
+    0%{
+        width: 0;
+        border:none
+    }
+    100%{
+        width: 100%;
+        border-bottom:2px solid #3b86cd
+    }
+}
+@keyframes animationlabel2{
+    0%{
+        width: 100%;
+        border-bottom:2px solid #3b86cd
+    }
+    100%{
+        width: 0;
+        border:none
+    }
+
+}
+@keyframes animationbtn{
+//     0%, 20%, 40%, 60%, 80%, 100% {
+//     animation-timing-function: cubic-bezier(.215,.61,.355,1);
+// }
+0% {
+    transform: scale3d(.3,.3,.3);
+}
+20% {
+    transform: scale3d(1.1,1.1,1.1);
+}
+40% {
+    transform: scale3d(.9,.9,.9);
+}
+60% {
+    transform: scale3d(1.03,1.03,1.03);
+}
+80% {
+    transform: scale3d(.97,.97,.97);
+}
+100% {
+    transform: scaleX(1);
+}
+
+}
